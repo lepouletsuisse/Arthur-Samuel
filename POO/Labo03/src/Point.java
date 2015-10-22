@@ -22,24 +22,24 @@ public class Point {
    private double y;
 
    //Constructeur
-   public Point(double x, double y){
+   public Point(double x, double y) {
       this.x = x;
       this.y = y;
    }
 
    //Redéfinition de la méthode toString. Retourne une String de la forme "(x,y)"
-   public String toString(){
+   public String toString() {
       String chaine = "(" + x + "," + y + ")";
       return chaine;
    }
 
    //Méthodes get
 
-   public double getX(){
+   public double getX() {
       return x;
    }
 
-   public double getY(){
+   public double getY() {
       return y;
    }
 }

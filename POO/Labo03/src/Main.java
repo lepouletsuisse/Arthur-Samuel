@@ -16,11 +16,11 @@
 */
 
 public class Main {
-   public static void main(String args[]){
-      Segment s1 = new Segment(new Point(0,0), new Point(5,5));
-      Segment s2 = new Segment(new Point(1,1), new Point(6,6));
-      Point p1 = new Point(1,1);
-      Point p2 = new Point(2,1);
+   public static void main(String args[]) {
+      Segment s1 = new Segment(new Point(0, 0), new Point(5, 5));
+      Segment s2 = new Segment(new Point(1, 1), new Point(6, 6));
+      Point p1 = new Point(1, 1);
+      Point p2 = new Point(2, 1);
       System.out.println("s1: " + s1.toString());
       System.out.println("s2: " + s2.toString());
       s1.échanger(s2);
