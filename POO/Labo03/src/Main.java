@@ -18,6 +18,8 @@
 public class Main {
    public static void main(String args[]) {
       //EX1 main
+      System.out.println("Exercice 1");
+      System.out.println("==========");
       Segment s1 = new Segment(new Point(0, 0), new Point(5, 5));
       Segment s2 = new Segment(new Point(1, 1), new Point(6, 6));
       Point p1 = new Point(1, 1);
@@ -36,7 +38,9 @@ public class Main {
       s1.permuter();
       System.out.println(s1.toString());
 
-      //EX2 main
+      //EX2
+      System.out.println("\n\nExercice 2");
+      System.out.println("==========");
       PointEx2 pntA = new PointEx2(1,1);
       System.out.println(pntA.afficheCartésien());
       System.out.println(pntA.affichePolaire());
@@ -62,5 +66,34 @@ public class Main {
          pntC.rotation(Math.toRadians(45));
       System.out.println(pntC.afficheCartésien());
       System.out.println(pntC.affichePolaire());
+
+      //EX2 Part 2
+      System.out.println("\n\nExercice 2 part 2");
+      System.out.println("==========");
+      PointEx2Part2 pntAPar2 = new PointEx2Part2(1,1);
+      System.out.println(pntAPar2.afficheCartésien());
+      System.out.println(pntAPar2.affichePolaire());
+      pntAPar2.déplace(-1, -1);
+      System.out.println(pntAPar2.afficheCartésien());
+      System.out.println(pntAPar2.affichePolaire());
+
+      System.out.println();
+
+      PointEx2Part2 pntBPar2 = new PointEx2Part2(1,1);
+      System.out.println(pntBPar2.afficheCartésien());
+      System.out.println(pntBPar2.affichePolaire());
+      pntBPar2.homothétie(2);
+      System.out.println(pntBPar2.afficheCartésien());
+      System.out.println(pntBPar2.affichePolaire());
+
+      System.out.println();
+
+      PointEx2Part2 pntCPar2 = new PointEx2Part2(1,0);
+      System.out.println(pntCPar2.afficheCartésien());
+      System.out.println(pntCPar2.affichePolaire());
+      for(int i=0;i<8;i++)
+         pntCPar2.rotation(Math.toRadians(45));
+      System.out.println(pntCPar2.afficheCartésien());
+      System.out.println(pntCPar2.affichePolaire());
    }
 }

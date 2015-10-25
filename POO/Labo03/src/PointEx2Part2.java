@@ -1,5 +1,3 @@
-import java.awt.geom.AffineTransform;
-
 /**
  * -----------------------------------------------------------------------------------
  * Laboratoire : Labo03
@@ -11,36 +9,39 @@ import java.awt.geom.AffineTransform;
  * Compilateur : jdk1.8.0_60
  * -----------------------------------------------------------------------------------
  */
-public class PointEx2 {
+public class PointEx2Part2 {
    /**
     * Constructeur du point, initialise les coordonnées
-    * carthésienne
+    * Polaire avec des paramètres d'entrées carthésiens
     */
-   public PointEx2(double x, double y) {
-      this.x = x;
-      this.y = y;
+   public PointEx2Part2(double x, double y) {
+      this.x = convertToRho(x, y);
+      this.y = convertToTheta(x, y);
    }
 
    /**
     * deplace le point selon les valeurs entrée en argument
     */
    public void déplace(double dx, double dy) {
-      x += dx;
-      y += dy;
+      double cartX = convertPolToCarthX(x, y) + dx;
+      double cartY = convertPolToCarthY(x, y) + dy;
+
+      x = convertToRho(cartX,cartY);
+      y = convertToTheta(cartX,cartY);
    }
 
    /**
     * Retourne l'abscisse (x)
     */
    public double abscisse() {
-      return x;
+      return convertPolToCarthX(x,y);
    }
 
    /**
     * Retourne l'ordonnée (Y)
     */
    public double ordonnée() {
-      return y;
+      return convertPolToCarthY(x,y);
    }
 
    /**
@@ -48,8 +49,11 @@ public class PointEx2 {
     * fournie en argument
     */
    public void homothétie(double mult) {
-      this.x *= mult;
-      this.y *= mult;
+      double cartX = convertPolToCarthX(x, y) * mult;
+      double cartY = convertPolToCarthY(x, y) * mult;
+
+      this.x = convertToRho(cartX, cartY);
+      this.y = convertToTheta(cartX,cartY);
    }
 
    /**
@@ -61,22 +65,22 @@ public class PointEx2 {
       tmpX = rho() * Math.cos(theta() - angle);
       tmpY = rho() * Math.sin(theta() - angle);
 
-      this.x = tmpX;
-      this.y = tmpY;
+      this.x = convertToRho(tmpX,tmpY);
+      this.y = convertToTheta(tmpX,tmpY);
    }
 
    /**
     * retourne le radius (rho) des coordonnee polaire
     */
    public double rho() {
-      return convertToRho(x,y);
+      return this.x;
    }
 
    /**
     * retourne la coordonnée polaire theta
     */
    public double theta() {
-      return convertToTheta(x,y);
+      return this.y;
    }
 
    /**
@@ -85,7 +89,7 @@ public class PointEx2 {
     */
    public String afficheCartésien() {
       String strCarthésien = "Coordonnées carthésiennes (X,Y) : ";
-      strCarthésien += "(" + x + "," + y + ")";
+      strCarthésien += "(" + abscisse() + "," + ordonnée() + ")";
 
       return strCarthésien;
    }
@@ -120,7 +124,7 @@ public class PointEx2 {
       // https://www.wikiwand.com/fr/
       // Coordonn%C3%A9es_polaires#/
       // Placer_des_points_en_coordonn.C3.A9es_polaires
-      return Math.atan2(x, y);
+      return Math.atan2(x,y);
    }
 
    /**
