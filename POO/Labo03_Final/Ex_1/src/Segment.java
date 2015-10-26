@@ -1,13 +1,13 @@
 /*
  -----------------------------------------------------------------------------------
  Laboratoire : 03
- Fichier     : Segment.java
+ Fichier     : Ex_1/Segment.java
  Auteur(s)   : Samuel Darcey & Arthur Verdone
  Date        : 13.10.2015
 
  But         : Crée une classe Segment comportant 2 points et permettant différentes
-               opérations sur cette objet (Permutation, modification, échanger avec
-               un autre point...)
+               opérations sur cet objet (Affichage, modification, échange,
+               permutation, appartenance d'un point à un segment)
 
  Remarque(s) :
 

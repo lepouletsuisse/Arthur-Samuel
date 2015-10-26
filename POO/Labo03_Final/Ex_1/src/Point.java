@@ -1,11 +1,11 @@
 /*
  -----------------------------------------------------------------------------------
  Laboratoire : 03
- Fichier     : Point.java
+ Fichier     : Ex_1/Point.java
  Auteur(s)   : Samuel Darcey & Arthur Verdone
  Date        : 13.10.2015
 
- But         : Crée une classe Point contenant les coordonnées d'un point sur un
+ But         : CrÃ©e une classe Point contennant les coordonnÃ©es d'un point sur un
                axe x et un axe y
 
  Remarque(s) :
@@ -23,7 +23,7 @@ public class Point {
    private double y;
 
    /**
-    * Constructeur créeant un Point directement avec son x et y
+    * Constructeur crÃ©eant un Point directement avec son x et y
     * */
    public Point(double x, double y) {
       this.x = x;
@@ -31,7 +31,7 @@ public class Point {
    }
 
    /**
-    * Redéfinition de la méthode toString. Retourne une String de la forme "(x,y)"
+    * RedÃ©finition de la mÃ©thode toString. Retourne une String de la forme "(x,y)"
     * */
    public String toString() {
       String chaine = "(" + x + "," + y + ")";
@@ -39,7 +39,7 @@ public class Point {
    }
 
    /**
-    * Méthodes get
+    * MÃ©thodes get
     * */
    public double getX() {
       return x;

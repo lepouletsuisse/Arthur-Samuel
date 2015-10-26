@@ -1,48 +1,48 @@
 /*
- * -----------------------------------------------------------------------------------
- * Laboratoire : Labo03
- * Fichier     : PointEx2.java
- * Auteur(s)   : Arthur Verdon & Samuel Darcey
- * Date        : 16.10.2015
- * But         : Classe permettant de gerer des points ayant des
- *               coordonnées polaire
- * Remarque(s) :
- * Compilateur : jdk1.8.0_60
- * -----------------------------------------------------------------------------------
- */
-public class PointEx2Part2 {
+ -----------------------------------------------------------------------------------
+ Laboratoire : 03
+ Fichier     : Ex_2_1/Main.java
+ Auteur(s)   : Samuel Darcey & Arthur Verdone
+ Date        : 13.10.2015
+
+ But         : Classe permettant de gerer des points ayant des
+               coordonnées cartésienne
+
+ Remarque(s) :
+
+ Compilateur : jdk1.8.0_60
+ -----------------------------------------------------------------------------------
+*/
+public class Point {
    /**
     * Constructeur du point, initialise les coordonnées
-    * Polaire avec des paramètres d'entrées carthésiens
+    * carthésienne
     */
-   public PointEx2Part2(double x, double y) {
-      this.x = convertirEnRho(x, y);
-      this.y = convertirEnTheta(x, y);
+   public Point(double x, double y) {
+      this.x = x;
+      this.y = y;
    }
 
    /**
     * deplace le point selon les valeurs entrée en argument
     */
    public void déplace(double dx, double dy) {
-      double cartX = convertirPolEnCarthX(x, y) + dx;
-      double cartY = convertirPolEnCarthY(x, y) + dy;
-
-      x = convertirEnRho(cartX, cartY);
-      y = convertirEnTheta(cartX, cartY);
+      x += dx;
+      y += dy;
    }
 
    /**
     * Retourne l'abscisse (x)
     */
    public double abscisse() {
-      return convertirPolEnCarthX(x, y);
+      return x;
    }
 
    /**
     * Retourne l'ordonnée (Y)
     */
    public double ordonnée() {
-      return convertirPolEnCarthY(x, y);
+      return y;
    }
 
    /**
@@ -50,11 +50,8 @@ public class PointEx2Part2 {
     * fournie en argument
     */
    public void homothétie(double mult) {
-      double cartX = convertirPolEnCarthX(x, y) * mult;
-      double cartY = convertirPolEnCarthY(x, y) * mult;
-
-      this.x = convertirEnRho(cartX, cartY);
-      this.y = convertirEnTheta(cartX, cartY);
+      this.x *= mult;
+      this.y *= mult;
    }
 
    /**
@@ -66,22 +63,22 @@ public class PointEx2Part2 {
       tmpX = (rho() * Math.cos(theta() + angle));
       tmpY = (rho() * Math.sin(theta() + angle));
 
-      this.x = convertirEnRho(tmpX, tmpY);
-      this.y = convertirEnTheta(tmpX, tmpY);
+      this.x = tmpX;
+      this.y = tmpY;
    }
 
    /**
     * retourne le radius (rho) des coordonnee polaire
     */
    public double rho() {
-      return this.x;
+      return convertirEnRho(x, y);
    }
 
    /**
     * retourne la coordonnée polaire theta
     */
    public double theta() {
-      return this.y;
+      return convertirEnTheta(x, y);
    }
 
    /**
@@ -90,7 +87,7 @@ public class PointEx2Part2 {
     */
    public String afficheCartésien() {
       String strCarthésien = "Coordonnées carthésiennes (X,Y) : ";
-      strCarthésien += "(" + abscisse() + "," + ordonnée() + ")";
+      strCarthésien += "(" + x + "," + y + ")";
 
       return strCarthésien;
    }
@@ -113,9 +110,7 @@ public class PointEx2Part2 {
     * donne le rho d'un point carthesien
     */
    private double convertirEnRho(double x, double y) {
-      /**
-       * calcul du radius (pythagore)
-       * */
+      //calcul du radius (pythagore)
       return Math.sqrt(x * x + y * y);
    }
 
@@ -126,7 +121,7 @@ public class PointEx2Part2 {
       /**
        * source : https://www.wikiwand.com/fr/Coordonn%C3%A9es_polaires#/
        * Placer_des_points_en_coordonn.C3.A9es_polaires
-       * */
+       */
       return Math.atan2(y, x);
    }
 
@@ -134,14 +129,14 @@ public class PointEx2Part2 {
     * donne le X a partir d'une coordonnée polaire
     */
    private double convertirPolEnCarthX(double rho, double theta) {
-      return Math.round(rho * Math.cos(theta) * 100) / 100;
+      return (int) (rho * Math.cos(theta));
    }
 
    /**
     * donne le Y a partir d'une coordonnée polaire
     */
    private double convertirPolEnCarthY(double rho, double theta) {
-      return Math.round(rho * Math.sin(theta) * 100) / 100;
+      return (int) (rho * Math.sin(theta));
    }
 
 }

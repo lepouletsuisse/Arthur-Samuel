@@ -1,21 +1,24 @@
 /*
- * -----------------------------------------------------------------------------------
- * Laboratoire : Labo03
- * Fichier     : PointEx2.java
- * Auteur(s)   : Arthur Verdon & Samuel Darcey
- * Date        : 16.10.2015
- * But         : Classe permettant de gerer des points ayant des
- *               coordonnées polaire
- * Remarque(s) :
- * Compilateur : jdk1.8.0_60
- * -----------------------------------------------------------------------------------
- */
-public class PointEx2Part2 {
+ -----------------------------------------------------------------------------------
+ Laboratoire : 03
+ Fichier     : Ex_2_2/Point.java
+ Auteur(s)   : Samuel Darcey & Arthur Verdone
+ Date        : 13.10.2015
+
+ But         : Classe permettant de gerer des points ayant des
+               coordonnées polaire
+
+ Remarque(s) :
+
+ Compilateur : jdk1.8.0_60
+ -----------------------------------------------------------------------------------
+*/
+public class Point {
    /**
     * Constructeur du point, initialise les coordonnées
     * Polaire avec des paramètres d'entrées carthésiens
     */
-   public PointEx2Part2(double x, double y) {
+   public Point(double x, double y) {
       this.x = convertirEnRho(x, y);
       this.y = convertirEnTheta(x, y);
    }
