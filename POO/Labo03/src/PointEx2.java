@@ -6,7 +6,8 @@ import java.awt.geom.AffineTransform;
  * Fichier     : PointEx2.java
  * Auteur(s)   : Arthur Verdon & Samuel Darcey
  * Date        : 16.10.2015
- * But         :
+ * But         : Classe permettant de gerer des points ayant des
+ *               coordonnées carthesienne
  * Remarque(s) :
  * Compilateur : jdk1.8.0_60
  * -----------------------------------------------------------------------------------
@@ -58,8 +59,8 @@ public class PointEx2 {
     */
    public void rotation(double angle) {
       double tmpX, tmpY;
-      tmpX = rho() * Math.cos(theta() - angle);
-      tmpY = rho() * Math.sin(theta() - angle);
+      tmpX = (rho() * Math.cos(theta() + angle));
+      tmpY = (rho() * Math.sin(theta() + angle));
 
       this.x = tmpX;
       this.y = tmpY;
@@ -120,21 +121,21 @@ public class PointEx2 {
       // https://www.wikiwand.com/fr/
       // Coordonn%C3%A9es_polaires#/
       // Placer_des_points_en_coordonn.C3.A9es_polaires
-      return Math.atan2(x, y);
+      return Math.atan2(y,x);
    }
 
    /**
     * donne le X a partir d'une coordonnée polaire
     */
    private double convertPolToCarthX(double rho, double theta) {
-      return rho * Math.cos(theta);
+      return (int)(rho * Math.cos(theta));
    }
 
    /**
     * donne le Y a partir d'une coordonnée polaire
     */
    private double convertPolToCarthY(double rho, double theta) {
-      return rho * Math.sin(theta);
+      return (int)(rho * Math.sin(theta));
    }
 
 }
