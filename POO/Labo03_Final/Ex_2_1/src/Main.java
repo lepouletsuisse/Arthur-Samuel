@@ -1,7 +1,7 @@
 /*
  -----------------------------------------------------------------------------------
  Laboratoire : 03
- Fichier     : Ex_2_1/Main.java
+ Fichier     : Main.java
  Auteur(s)   : Samuel Darcey & Arthur Verdone
  Date        : 13.10.2015
 
@@ -9,7 +9,7 @@
                appliqué plusieurs type de méthode (Déplacement, affichage,
                rotation, homothétie)
 
- Remarque(s) :
+ Remarque(s) : Exercice 2, partie 1
 
  Compilateur : jdk1.8.0_60
  -----------------------------------------------------------------------------------

@@ -1,7 +1,7 @@
 /*
  -----------------------------------------------------------------------------------
  Laboratoire : 03
- Fichier     : Ex_1/Main.java
+ Fichier     : Main.java
  Auteur(s)   : Samuel Darcey & Arthur Verdone
  Date        : 13.10.2015
 
@@ -9,7 +9,7 @@
                appliquer plusieurs type de méthode (Affichage, modification, échange,
                permutation, appartenance d'un point à un segment)
 
- Remarque(s) :
+ Remarque(s) : Exercice 1
 
  Compilateur : jdk1.8.0_60
  -----------------------------------------------------------------------------------

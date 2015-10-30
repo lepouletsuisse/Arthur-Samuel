@@ -1,14 +1,14 @@
 /*
  -----------------------------------------------------------------------------------
  Laboratoire : 03
- Fichier     : Ex_2_2/Point.java
+ Fichier     : Point.java
  Auteur(s)   : Samuel Darcey & Arthur Verdone
  Date        : 13.10.2015
 
  But         : Classe permettant de gerer des points ayant des
                coordonnées polaire
 
- Remarque(s) :
+ Remarque(s) : Exercice 2, partie 2
 
  Compilateur : jdk1.8.0_60
  -----------------------------------------------------------------------------------

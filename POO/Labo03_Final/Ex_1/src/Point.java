@@ -1,14 +1,14 @@
 /*
  -----------------------------------------------------------------------------------
  Laboratoire : 03
- Fichier     : Ex_1/Point.java
+ Fichier     : Point.java
  Auteur(s)   : Samuel Darcey & Arthur Verdone
  Date        : 13.10.2015
 
  But         : Crée une classe Point contennant les coordonnées d'un point sur un
                axe x et un axe y
 
- Remarque(s) :
+ Remarque(s) : Exercice 1
 
  Compilateur : jdk1.8.0_60
  -----------------------------------------------------------------------------------
